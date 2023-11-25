@@ -28,6 +28,7 @@
 
 .pokecard__body {
     padding: 3.5em 1em 2em;
+    background-color: white;
 }
 
 .pokecard__name {

@@ -2,6 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef } from "react"
 import { useFetch } from "../../hooks/useFetch"
+import './styles/SelectType.css'
 
 /* eslint-disable react/no-unescaped-entities */
 export const SelectType = ({setSelectValue}) => {
@@ -21,7 +22,7 @@ export const SelectType = ({setSelectValue}) => {
     }
 
     return (
-        <select ref={selectElement} onChange={handleChange}>
+        <select className="selecttype"  ref={selectElement} onChange={handleChange}>
             <option value='allPokemons'>All Pokémon's </option>
             {
                 infoTypes?.results.map(type => (

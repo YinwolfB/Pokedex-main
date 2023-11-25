@@ -13,9 +13,9 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<HomePages />} />
-        <Route element={<ProtectedRoutes/>} >
-          <Route path='/pokedex' element={<PokedexPage />} />
-          <Route path='/pokedex/:id' element={<PokeinfoPage />} />
+        <Route element={<ProtectedRoutes />} >
+            <Route path='/pokedex' element={<PokedexPage />} />
+            <Route path='/pokedex/:id' element={<PokeinfoPage />} />
         </Route>
       </Routes>
     </div>
