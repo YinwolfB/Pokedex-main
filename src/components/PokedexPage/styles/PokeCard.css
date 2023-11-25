@@ -5,6 +5,7 @@
     border: 0.7em solid #ccc;
     cursor: pointer;
     transition: transform 300ms ease;
+    margin-bottom: 1rem;
 }
 
 .pokecard:hover{

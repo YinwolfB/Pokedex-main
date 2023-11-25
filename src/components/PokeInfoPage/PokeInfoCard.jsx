@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react"
 import { useFetch } from "../../hooks/useFetch"
+import './styles/PokeInfoCard.css'
 
 export const PokeInfoCard = ({ url }) => {
     const [infoPoke, getInfoPoke] = useFetch(url);
@@ -18,7 +19,7 @@ export const PokeInfoCard = ({ url }) => {
                     <img className="pokeinfocard__img" src={infoPoke?.sprites.other.dream_world.front_default} alt="" />
                 </header>
 
-                <div className="pokeinfocard__baiscdata">
+                <div className="pokeinfocard__basicdata">
                     <h4 className="pokeinfocard__id">#{infoPoke?.id}</h4>
                     <h2 className="pokeinfocard__name">{infoPoke?.name}</h2>
                     <ul className="pokeinfocard__dimention">
@@ -28,6 +29,8 @@ export const PokeInfoCard = ({ url }) => {
                         </li>
                     </ul>
                 </div>
+
+                <hr className="pokeinfocard__hr1"/>
 
                 <section className="pokeinfocard__containerinfo">
                     <div className="pokeinfocard__containertype">

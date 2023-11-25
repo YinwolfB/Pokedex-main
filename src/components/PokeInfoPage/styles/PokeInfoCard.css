@@ -1,0 +1,169 @@
+.pokeinfocard {
+    background-color: aqua;
+    padding: 5rem;
+}
+
+/* Section 1 */
+.pokeinfocard__section1 {
+    width: 100%;
+    max-width: 600px;
+    border: outset;
+    cursor: pointer;
+    transition: transform 300ms ease;
+    background-color: whitesmoke;
+    margin-bottom: 2rem;
+}
+
+.pokeinfocard__section1:hover {
+    transform: scale(1.03);
+}
+
+.pokeinfocard__header {
+    background-color: #999;
+    aspect-ratio: 2;
+    position: relative;
+}
+
+.pokeinfocard__img {
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0rem;
+}
+
+.pokeinfocard__basicdata {
+    padding: 3.5em 1em 2em;
+}
+
+.pokeinfocard__basicdata {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: -1px;
+}
+
+.pokeinfocard__id {
+    width: 2em;
+    padding: 0.2em;
+    border: 2px solid rgba(51, 51, 51, 0.2);
+    background-color: #f0f0f0;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 0.3rem;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.pokeinfocard__name {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: -1px;
+}
+
+
+
+.pokeinfocard__dimention {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pokeinfocard__dimentionsinfo {
+    display: flex;
+}
+
+.pokeinfocard__hr1 {
+    margin-bottom: 1em;
+    border: 3px solid #ccc4;
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.pokeinfocard__infow,
+.pokeinfocard__infoh {
+    margin: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.pokeinfocard__infow--title,
+.pokeinfocard__infoh--title {
+    display: block;
+    font-weight: 300;
+}
+
+.pokeinfocard__infow--value,
+.pokeinfocard__infoh--value {
+    display: block;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+.pokeinfocard__containerinfo {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.pokeinfocard__containertype,
+.pokeinfocard__containerabilities {
+    text-align: center;
+}
+
+.pokeinfocard__titletype,
+.pokeinfocard__titleabilities {
+    margin-bottom: 10px;
+}
+
+.pokeinfocard__type,
+.pokeinfocard__abilities {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokeinfocard__type--name,
+.pokeinfocard__abilities--name {
+    font-size: 14px;
+    width: 8em;
+    padding: 0.2em;
+    border: 1px solid #3334;
+    margin: 0.6em;
+    border-radius: 0.3rem;
+    background-color: #ccc;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Section 2  */
+.pokeinfocard__section2 {
+    width: 100%;
+    max-width: 350px;
+    border: outset;
+    cursor: pointer;
+    transition: transform 300ms ease;
+    background-color: whitesmoke;
+    margin-bottom: 2rem;
+}
+
+.pokeinfocard__section2:hover {
+    transform: scale(1.03);
+}
