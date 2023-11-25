@@ -12,16 +12,24 @@ export const PokeInfoCard = ({ url }) => {
     }, []);
 
     console.log(infoPoke)
+
+    const maxStatValue = 150;
+
+    const firstType = infoPoke?.types[0].type.name
+    const secondType = infoPoke?.types[1].type.name
+
+
+    console.log(infoPoke)
     return (
-        <article className="pokeinfocard">
+        <article className={`pokeinfocard ${firstType}-border`}>
             <section className="pokeinfocard__section1">
-                <header className="pokeinfocard__header">
+                <header className={`pokeinfocard__header ${firstType}-gradient`}>
                     <img className="pokeinfocard__img" src={infoPoke?.sprites.other.dream_world.front_default} alt="" />
                 </header>
 
                 <div className="pokeinfocard__basicdata">
-                    <h4 className="pokeinfocard__id">#{infoPoke?.id}</h4>
-                    <h2 className="pokeinfocard__name">{infoPoke?.name}</h2>
+                    <h4 className={`pokeinfocard__id ${firstType}-value`}>#{infoPoke?.id}</h4>
+                    <h2 className={`pokeinfocard__name ${firstType}-font`}>{infoPoke?.name}</h2>
                     <ul className="pokeinfocard__dimention">
                         <li className="pokeinfocard__dimentionsinfo">
                             <h3 className="pokeinfocard__infow"><span className="pokeinfocard__infow--title">Weight </span><span className="pokeinfocard__infow--value">{infoPoke?.weight}</span></h3>
@@ -30,16 +38,20 @@ export const PokeInfoCard = ({ url }) => {
                     </ul>
                 </div>
 
-                <hr className="pokeinfocard__hr1"/>
+                <hr className="pokeinfocard__hr1" />
 
                 <section className="pokeinfocard__containerinfo">
                     <div className="pokeinfocard__containertype">
                         <h3 className="pokeinfocard__titletype">Type</h3>
-                        <ul className="pokeinfocard__type">
+                        <ul className={`pokeinfocard__type `}>
                             {infoPoke?.types.map((infoType, index) => (
-                                <li className="pokeinfocard__type--name" key={`${infoType.type.name}-${index}`}> {infoType.type.name}</li>
-                            ))
-                            }
+                                <li
+                                    className={`pokeinfocard__type--name ${index === 0 ? firstType : secondType}-gradient`}
+                                    key={`${infoType.type.name}-${index}`}
+                                >
+                                    {infoType.type.name}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className="pokeinfocard__containerabilities">
@@ -51,22 +63,38 @@ export const PokeInfoCard = ({ url }) => {
                         </ul>
                     </div>
                 </section>
-
-                <section className="pokeinfocard__statsdata">
-                    <ul className="pokeinfocard__stats">
-                        {infoPoke?.stats.map((infoStat, index) => (
-                            <li className="pokeinfocard__stat" key={`${infoStat.stat.name}-${index}`}>
-                                <h3 className="pokeinfocard__stat--name"> <span>{infoStat.stat.name}</span> </h3>
-                                <span className="pokeinfocard__stat--value">{infoStat.base_stat}</span>
-                            </li>
-                        ))}
+                {/* -------------Inicio Barra de Stats------------- */}
+                <section className={`pokeinfocard__statsdata`}>
+                    <ul className={`pokeinfocard__stats`}>
+                        {infoPoke?.stats.map((infoStat, index) => {
+                            const statPercentage = (infoStat.base_stat / maxStatValue) * 100;
+/* ${firstType}-value ${secondType}-value */
+                            return (
+                                <li
+                                    className={`pokeinfocard__stat`}
+                                    key={`${infoStat.stat.name}-${index}`}
+                                >
+                                    <h3 className={`pokeinfocard__stat--name ${secondType}-value`}>
+                                        <span>{infoStat.stat.name}</span>
+                                    </h3>
+                                    <div className={`pokeinfocard__stat-bar ${secondType}-value`}>
+                                        <div
+                                            className={`pokeinfocard__stat-progress`}
+                                            style={{ width: `${statPercentage}%` }}
+                                        ></div>
+                                    </div>
+                                    <span className={`pokeinfocard__stat--value ${secondType}-value`}>{infoStat.base_stat}/150</span>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </section>
             </section>
             <section className="pokeinfocard__section2">
                 <h2 className="pokeinfocard__titlemovements">Movements</h2>
+                <hr className="pokeinfocard__hr1" />
                 <ul className="pokeinfocard__movements">
-                    {infoPoke?.moves.map((infoMove, index)=>(
+                    {infoPoke?.moves.map((infoMove, index) => (
                         <li className="pokeinfocard__move" key={`${infoMove.name}-${index}`}>{infoMove.move.name}</li>
                     ))}
                 </ul>

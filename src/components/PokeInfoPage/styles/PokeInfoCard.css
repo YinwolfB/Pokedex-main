@@ -3,12 +3,12 @@
     padding: 5rem;
 }
 
-/* Section 1 */
+/*---------------------- Section 1 ----------------------*/
 .pokeinfocard__section1 {
     width: 100%;
     max-width: 600px;
     border: outset;
-    cursor: pointer;
+/*     cursor: pointer; */
     transition: transform 300ms ease;
     background-color: whitesmoke;
     margin-bottom: 2rem;
@@ -44,7 +44,7 @@
 }
 
 .pokeinfocard__id {
-    width: 2em;
+    width: 3em;
     padding: 0.2em;
     border: 2px solid rgba(51, 51, 51, 0.2);
     background-color: #f0f0f0;
@@ -52,7 +52,7 @@
     text-align: center;
     border-radius: 0.3rem;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 1.5em; /* Tamaño de fuente en relación con el contenedor */
 }
 
 .pokeinfocard__name {
@@ -79,7 +79,8 @@
 .pokeinfocard__hr1 {
     margin-bottom: 1em;
     border: 3px solid #ccc4;
-    width: 80%; /* Ajusta el ancho según tus necesidades */
+    width: 80%;
+    /* Ajusta el ancho según tus necesidades */
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -143,6 +144,67 @@
 
 }
 
+/*---------------------- Barra de stats ----------------------*/
+.pokeinfocard__statsdata {
+    margin-top: 1rem;
+    /* Ajusta el margen superior según tus necesidades */
+}
+
+.pokeinfocard__stat {
+    margin-bottom: 1rem;
+    transition: transform 500ms ease, box-shadow 300ms ease;
+    /* Agrega la transición a box-shadow */
+}
+
+.pokeinfocard__stat:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.pokeinfocard__stat--name {
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: start;
+    margin: 0em 0em 0em 5em;
+}
+
+.pokeinfocard__stat-bar {
+    height: 1.5rem;
+    /* Altura de la barra */
+    background-color: #ccc4;
+    /* Color de fondo de la barra */
+    border-radius: 0.3rem;
+    /* Esquinas redondeadas para la barra */
+    overflow: hidden;
+    /* Oculta el contenido que se desborda */
+    margin: 0em 5em 0em 5em;
+    transition: transform 1s ease;
+}
+
+/* Aplica el color del segundo tipo a la barra de progreso al hacer hover */
+.pokeinfocard__stat:hover .pokeinfocard__stat-progress {
+    background-color: #271e1b; /* Cambia el color al del segundo tipo */
+}
+
+.pokeinfocard__stat-progress {
+    height: 100%;
+    background-color: #ccc;
+    /* Color de la barra de progreso por defecto */
+}
+
+.pokeinfocard__stat--value {
+    font-size: 20px;
+    padding-top: 1rem;
+    margin-top: 0.5em;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: end;
+    margin: 0em 5em 0em 0em;
+}
 
 
 
@@ -152,18 +214,364 @@
 
 
 
-
-/* Section 2  */
+/*---------------------- Section 2 ----------------------*/
 .pokeinfocard__section2 {
     width: 100%;
-    max-width: 350px;
+    max-width: 600px;
     border: outset;
-    cursor: pointer;
-    transition: transform 300ms ease;
     background-color: whitesmoke;
+    transition: transform 300ms ease;
     margin-bottom: 2rem;
 }
 
 .pokeinfocard__section2:hover {
+
     transform: scale(1.03);
+}
+
+.pokeinfocard__titlemovements {
+    text-align: center;
+    /* Centra el título */
+}
+
+.pokeinfocard__hr1 {
+    margin: 10px auto;
+    /* Ajusta el margen y centra la línea horizontal */
+    width: 50%;
+    /* Ajusta la longitud de la línea horizontal */
+    border: 3px solid #ccc4;
+}
+
+.pokeinfocard__movements {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: space-around;
+    /* Distribuye el espacio horizontalmente */
+}
+
+.pokeinfocard__move {
+    margin: 0.55em;
+    background-color: #ccc;
+    padding: 0.1em 0.6em 0.1em 0.6em;
+    border-radius: 1rem;
+    transition: transform 500ms ease, box-shadow 300ms ease;
+    /* Agrega la transición a box-shadow */
+}
+
+.pokeinfocard__move:hover {
+    transform: scale(2);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    /* Agrega la sombra al hacer hover */
+}
+
+
+/*------------------------------ COLOR ------------------------------*/
+
+/*------------------------------ Grass ------------------------------*/
+.grass-gradient{
+    background: linear-gradient(178.92deg, #7EC6C5 0.92%, #ABDAC6 47.96%, #CAE099 99.08%);
+
+}
+
+.grass-border{
+    border-color: #ABDAC6;
+}
+
+.grass-font{
+    color: #ABDAC6;
+}
+
+.grass-value{
+    color: #ABDAC6;
+}
+
+/*------------------------------ fire ------------------------------*/
+.fire-gradient{
+    background: linear-gradient(176.37deg, #F96D6F -32.26%, #E35825 22.55%, #E8AE1B 125.72%);
+}
+
+.fire-border{
+    border-color: #E35825;
+}
+
+.fire-font{
+    color: #E35825;
+}
+
+.fire-value{
+    color: #E35825;
+}
+
+/*------------------------------ Water ------------------------------*/
+.water-gradient{
+    background: linear-gradient(179.57deg, #133258 -70.14%, #1479FB 56.16%, #82B2F1 214.85%);
+}
+
+.water-border{
+    border-color: #1479FB;
+}
+
+.water-font{
+    color: #1479FB;
+}
+
+.water-value{
+    color: #1479FB;
+}
+
+/*------------------------------ bug ------------------------------*/
+.bug-gradient{
+    background: linear-gradient(177.56deg, #62DB60 -58.92%, #3BB039 16.57%, #AAFFA8 209.53%);
+}
+
+.bug-border{
+    border-color: #3BB039;
+}
+
+.bug-font{
+    color: #3BB039;
+}
+
+.bug-value{
+    color: #3BB039;
+}
+
+/*------------------------------ Normal ------------------------------*/
+.normal-gradient{
+    background: linear-gradient(181.51deg, #735259 -6.44%, #BC6B7C 121.95%, #7C3F4C 186.11%);
+}
+
+.normal-border{
+    border-color: #BC6B7C;
+}
+
+.normal-font{
+    color: #BC6B7C;
+}
+
+.normal-value{
+    color: #BC6B7C;
+}
+
+/*------------------------------ Fighting ------------------------------*/
+.fighting-gradient{
+    background: linear-gradient(176.83deg, #96402A -8.78%, #F1613C 169.09%, #CB735D 242.33%);
+}
+
+.fighting-border{
+    border-color: #F1613C;
+}
+
+.fighting-font{
+    color: #F1613C;
+}
+
+.fighting-value{
+    color: #F1613C;
+}
+
+/*------------------------------ Poison ------------------------------*/
+.poison-gradient{
+    background: linear-gradient(177.03deg, #5B3184 -11.97%, #A564E3 71.28%, #CE9BFF 135.64%);
+}
+
+.poison-border{
+    border-color: #A564E3;
+}
+
+.poison-font{
+    color: #A564E3;
+}
+
+.poison-value{
+    color: #A564E3;
+}
+
+/*------------------------------ Gosth ------------------------------*/
+.gosth-gradient{
+    background: linear-gradient(177.03deg, #323569 -11.97%, #454AA8 57.49%, #787DDA 135.64%);
+}
+
+.gosth-border{
+    border-color: #454AA8;
+}
+
+.gosth-font{
+    color: #454AA8;
+}
+
+.gosth-value{
+    color: #454AA8;
+}
+
+/*------------------------------ Rock ------------------------------*/
+.rock-gradient{
+    background: linear-gradient(177.03deg, #7E7E7E -11.97%, #8D8D94 57.49%, #D3D3D3 135.64%);
+}
+
+.rock-border{
+    border-color: #8D8D94;
+}
+
+.rock-font{
+    color: #8D8D94;
+}
+
+.rock-value{
+    color: #8D8D94;
+}
+
+/*------------------------------ Dark ------------------------------*/
+.dark-gradient{
+    background: linear-gradient(177.03deg, #030706 -11.97%, #0D1211 57.49%, #5A5E5D 135.64%);
+}
+
+.dark-border{
+    border-color: #0D1211;
+}
+
+.dark-font{
+    color: #0D1211;
+}
+
+.dark-value{
+    color: #0D1211;
+}
+
+/*------------------------------ Ice ------------------------------*/
+.ice-gradient{
+    background: linear-gradient(177.03deg, #6FBEDF -11.97%, #64CBF5 47.77%, #BDEBFE 136.72%);
+}
+
+.ice-border{
+    border-color: #64CBF5;
+}
+
+.ice-font{
+    color: #64CBF5;
+}
+
+.ice-value{
+    color: #64CBF5;
+}
+
+/*------------------------------ Steel ------------------------------*/
+.steel-gradient{
+    background: linear-gradient(179.75deg, #5E736C -19.96%, #728881 43.67%, #A8A8A8 138.4%);
+}
+
+.steel-border{
+    border-color: #728881;
+}
+
+.steel-font{
+    color: #728881;
+}
+
+.steel-value{
+    color: #728881;
+}
+
+/*------------------------------ Dragon ------------------------------*/
+.dragon-gradient{
+    background: linear-gradient(179.75deg, #478A93 -19.96%, #56A4AE 43.67%, #A2BEC1 138.4%);
+}
+
+.dragon-border{
+    border-color: #56A4AE;
+}
+
+.dragon-font{
+    color: #56A4AE;
+}
+
+.dragon-value{
+    color: #56A4AE;
+}
+
+/*------------------------------ Fairy ------------------------------*/
+.fairy-gradient{
+    background: linear-gradient(179.75deg, #971B45 -19.96%, #C23867 43.67%, #CD7D98 138.4%);
+}
+
+.fairy-border{
+    border-color: #C23867;
+}
+
+.fairy-font{
+    color: #C23867;
+}
+
+.fairy-value{
+    color: #C23867;
+}
+
+/*------------------------------ Electric ------------------------------*/
+.electric-gradient{
+    background: linear-gradient(179.75deg, #0C1395 -19.96%, #2B319B 43.67%, #7075D9 138.4%);
+}
+
+.electric-border{
+    border-color: #2B319B;
+}
+
+.electric-font{
+    color: #2B319B;
+}
+
+.electric-value{
+    color: #2B319B;
+}
+
+/*------------------------------ Ground ------------------------------*/
+.ground-gradient{
+    background: linear-gradient(179.75deg, #654008 -19.96%, #895C1A 43.67%, #D69638 138.4%);
+}
+
+.ground-border{
+    border-color: #895C1A;
+}
+
+.ground-font{
+    color: #895C1A;
+}
+
+.ground-value{
+    color: #895C1A;
+}
+
+/*------------------------------ Psychic ------------------------------*/
+.psychic-gradient{
+    background: linear-gradient(179.75deg, #E62D2D -19.96%, #D13E3E 43.67%, #F07F7F 138.4%);
+}
+
+.psychic-border{
+    border-color: #D13E3E;
+}
+
+.psychic-font{
+    color: #D13E3E;
+}
+
+.psychic-value{
+    color: #D13E3E;
+}
+
+/*------------------------------ Flying ------------------------------*/
+.flying-gradient{
+    background: linear-gradient(179.75deg, #E8AE1B -19.96%, #D69638 43.67%, #BDEBFE 138.4%);
+}
+
+.flying-border{
+    border-color: #D69638;
+}
+
+.flying-font{
+    color: #D69638;
+}
+
+.flying-value{
+    color: #D69638;
 }
