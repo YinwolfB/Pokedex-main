@@ -1,95 +1,71 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useFetch } from "../../hooks/useFetch"
 
 export const PokeInfoCard = ({ url }) => {
-    const [infoPoke, getInfoPoke] = useFetch(url)
-    const [abilities, setAbilities] = useState('')
-    const [types, setTypes] = useState('')
-    const [stats, setStats] = useState('')
-    const [moves, setMoves] = useState('')
+    const [infoPoke, getInfoPoke] = useFetch(url);
 
     useEffect(() => {
-        getInfoPoke()
-    }, [])
+        getInfoPoke();
+    }, []);
 
-    useEffect(() => {
-        if (infoPoke) {
-            const abilitiesList = infoPoke.abilities.map((ability, index) => ({
-                name: ability.ability.name,
-                id: index // Usar 'index' como identificador único
-            }))
-            const typesList = infoPoke.types.map((type, index) => ({
-                name: type.type.name,
-                id: index // Usar 'index' como identificador único
-            }))
-            const statsList = infoPoke.stats.map((stat, index) => ({
-                name: stat.stat.name,
-                baseStat: stat.base_stat,
-                id: index // Usar 'index' como identificador único
-            }))
-            const movesList = infoPoke.moves.map((move, index) => ({
-                name: move.move.name,
-                id: index // Usar 'index' como identificador único
-            }))
-
-            setAbilities(abilitiesList)
-            setTypes(typesList)
-            setStats(statsList)
-            setMoves(movesList)
-        }
-    }, [infoPoke])
-
+    console.log(infoPoke)
     return (
         <article>
-            <article>
-                <hr />
+            <section>
+                <header>
+                    <img src={infoPoke?.sprites.other.dream_world.front_default} alt="" />
+                </header>
+                <div>
+                    <h4>#{infoPoke?.id}</h4>
+                    <h2>{infoPoke?.name}</h2>
+                    <ul>
+                        <li>
+                            <h3><span>Weight </span><span>{infoPoke?.weight}</span></h3>
+                            <h3><span>height </span><span>{infoPoke?.height}</span></h3>
+                        </li>
+                    </ul>
+                </div>
+
                 <section>
-                    <h3>Abilities</h3>
                     <div>
-                        {typeof abilities === 'string' ? <li>{abilities}</li> :
-                            abilities.map(ability => (
-                                <p key={ability.id}>{ability.name}</p>
+                        <h3>Type</h3>
+                        <ul>
+                            {infoPoke?.types.map((infoType, index) => (
+                                <li key={`${infoType.type.name}-${index}`}> {infoType.type.name}</li>
                             ))
-                        }
+                            }
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Abilities</h3>
+                        <ul>
+                            {infoPoke?.abilities.map((infoAbility, index) => (
+                                <li key={`${infoAbility.ability.name}-${index}`}>{infoAbility.ability.name}</li>
+                            ))}
+                        </ul>
                     </div>
                 </section>
                 <section>
-                    <h3>Types</h3>
-                    <div>
-                        {typeof types === 'string' ? <li>{types}</li> :
-                            types.map(type => (
-                                <p key={type.id}>{type.name}</p>
-                            ))
-                        }
-                    </div>
-                </section>
-                <section>
-                    <hr />
-                    <h4>Stats</h4>
                     <ul>
-                        {typeof stats === 'string' ? <li>{stats}</li> :
-                            stats.map(stat => (
-                                <li key={stat.id}> <span>{stat.name}: </span><span> {stat.baseStat}/150 </span></li>
-                            ))
-                        }
+                        {infoPoke?.stats.map((infoStat, index) => (
+                            <li key={`${infoStat.stat.name}-${index}`}>
+                                <h3> <span>{infoStat.stat.name}</span> </h3>
+                                <span>{infoStat.base_stat}</span>
+                            </li>
+                        ))}
                     </ul>
                 </section>
-            </article>
-            <article>
-                <section>
-                    <hr />
-                    <h3>Moves</h3>
-                    <ul>
-                        {typeof moves === 'string' ? <li>{moves}</li> :
-                            moves.map(move => (
-                                <li key={move.id}> <span>{move.name}</span></li>
-                            ))
-                        }
-                    </ul>
-                </section>
-            </article>
+            </section>
+            <section>
+                <h2>Movements</h2>
+                <ul>
+                    {infoPoke?.moves.map((infoMove, index)=>(
+                        <li key={`${infoMove.name}-${index}`}>{infoMove.move.name}</li>
+                    ))}
+                </ul>
+            </section>
         </article>
     )
 }
