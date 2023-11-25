@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,400&display=swap');
 
 /**--Reset--**/
 * {
@@ -12,18 +13,11 @@ body {
     margin: 0;
 }
 
-input {
-    font-size: inherit;
-}
-
-button {
-    font-size: inherit;
-    cursor: pointer;
-}
-
 h1,
 h2,
 h3,
+h4,
+p,
 ul,
 hr {
     margin-top: 0;
@@ -39,3 +33,17 @@ img {
     width: 100%;
     display: block;
 }
+
+input {
+    font-family: inherit;
+    outline: none;
+    border: none; /* Borde de la caja del input */
+}
+
+button {
+    font-size: inherit;
+    border: none;
+}
+
+
+
