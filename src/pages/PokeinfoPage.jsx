@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useFetch } from "../hooks/useFetch"
 import { useEffect } from "react"
 import { PokeInfoCard } from "../components/PokeInfoPage/PokeInfoCard"
+import './styles/PokeInfoPage.css'
 
 export const PokeinfoPage = () => {
 
@@ -19,14 +20,14 @@ export const PokeinfoPage = () => {
     console.log(pokemon)
 
     return (
-        <div>
-            <article>
-                {/* numero, nombre, peso y altura */}
-                {/* Tipo y habilidades*/}
-                <section>
-                    <PokeInfoCard url={url} />
-                </section>
-            </article>
-        </div>
+        <article className="pokeinfopage">
+            <header className="pokeinfopage__header">
+                <img className="pokeinfopage__header--teatle" src="./img/image 11 name.svg" alt="" />
+                <img className="pokeinfopage__header--img" src="./img/Group 216 head.svg" alt="" />
+            </header>
+            <section className="pokeinfopage__pokeinfocard"> 
+                <PokeInfoCard url={url} />
+            </section>
+        </article>
     )
 }

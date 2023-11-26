@@ -1,5 +1,4 @@
 .pokeinfocard {
-    background-color: aqua;
     padding: 5rem;
 }
 
@@ -12,6 +11,7 @@
     transition: transform 300ms ease;
     background-color: whitesmoke;
     margin-bottom: 2rem;
+    border-radius: 1em;
 }
 
 .pokeinfocard__section1:hover {
@@ -22,6 +22,7 @@
     background-color: #999;
     aspect-ratio: 2;
     position: relative;
+    border-radius: 1em;
 }
 
 .pokeinfocard__img {
@@ -52,7 +53,7 @@
     text-align: center;
     border-radius: 0.3rem;
     font-weight: 400;
-    font-size: 1.5em; /* Tamaño de fuente en relación con el contenedor */
+    font-size: 1.5em; 
 }
 
 .pokeinfocard__name {
@@ -80,7 +81,6 @@
     margin-bottom: 1em;
     border: 3px solid #ccc4;
     width: 80%;
-    /* Ajusta el ancho según tus necesidades */
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -173,26 +173,20 @@
 
 .pokeinfocard__stat-bar {
     height: 1.5rem;
-    /* Altura de la barra */
     background-color: #ccc4;
-    /* Color de fondo de la barra */
     border-radius: 0.3rem;
-    /* Esquinas redondeadas para la barra */
     overflow: hidden;
-    /* Oculta el contenido que se desborda */
     margin: 0em 5em 0em 5em;
     transition: transform 1s ease;
 }
 
-/* Aplica el color del segundo tipo a la barra de progreso al hacer hover */
 .pokeinfocard__stat:hover .pokeinfocard__stat-progress {
-    background-color: #271e1b; /* Cambia el color al del segundo tipo */
+    background-color: #271e1b; 
 }
 
 .pokeinfocard__stat-progress {
     height: 100%;
     background-color: #ccc;
-    /* Color de la barra de progreso por defecto */
 }
 
 .pokeinfocard__stat--value {
@@ -222,6 +216,7 @@
     background-color: whitesmoke;
     transition: transform 300ms ease;
     margin-bottom: 2rem;
+    border-radius: 1rem;
 }
 
 .pokeinfocard__section2:hover {

@@ -3,6 +3,7 @@ import { useRef } from "react"
 import { setTrainerName } from "../store/slices/trainerName.slice"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import './styles/HomePages.css'
 
 export const HomePages = () => {
 
@@ -10,7 +11,7 @@ export const HomePages = () => {
 
     const dispatch = useDispatch()
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -19,14 +20,19 @@ export const HomePages = () => {
     }
 
     return (
-        <div>
-            <h1>PokéDex</h1>
-            <h2>Hi Trainer!</h2>
-            <p>To start, please give me your trainer name</p>
-            <form onSubmit={handleSubmit}>
-                <input ref={inputName} type="text" />
-                <button>Gotta catch'em all!</button>
-            </form>
+        <div className="homepages">
+            <section className="homepages__container">
+                <img className="homepages__img" src='./img/image 11 name.svg' alt="" />
+                <h2 className="homepages__greeting">Hi Trainer!</h2>
+                <p className="homepages__give">To start, please give me your trainer name</p>
+                <form className="homepages__form" onSubmit={handleSubmit}>
+                    <input className="homepages__input" ref={inputName} type="text" />
+                    <button className="homepages__btn">Gotta catch'em all!</button>
+                </form>
+            </section>
+            <footer className="homepages__footer">
+                <img className="homepages__footer--img" src="./img/Group 216 footer.svg" alt="" />
+            </footer>
         </div>
     )
 }

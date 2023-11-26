@@ -5,7 +5,7 @@ import { useFetch } from "../../hooks/useFetch"
 import './styles/SelectType.css'
 
 /* eslint-disable react/no-unescaped-entities */
-export const SelectType = ({setSelectValue}) => {
+export const SelectType = ({ setSelectValue }) => {
 
     const url = 'https://pokeapi.co/api/v2/type'
 
@@ -14,7 +14,7 @@ export const SelectType = ({setSelectValue}) => {
     useEffect(() => {
         getInfoTypes()
     }, [])
-    
+
     const selectElement = useRef()
 
     const handleChange = () => {
@@ -22,14 +22,16 @@ export const SelectType = ({setSelectValue}) => {
     }
 
     return (
-        <select className="selecttype"  ref={selectElement} onChange={handleChange}>
-            <option value='allPokemons'>All Pokémon's </option>
-            {
-                infoTypes?.results.map(type => (
-                    <option key={type.url} value={type.url}>{type.name}</option>
-                ))
-            }
-        </select>
+        <article className="selecttype">
+            <select className="selecttype__container" ref={selectElement} onChange={handleChange}>
+                <option className="selecttype__allpoke" value='allPokemons'>  Type Pokémon's </option>
+                {
+                    infoTypes?.results.map(type => (
+                        <option className="selecttype__listype" key={type.url} value={type.url}>{type.name}</option>
+                    ))
+                }
+            </select>
+        </article>
     )
 }
 

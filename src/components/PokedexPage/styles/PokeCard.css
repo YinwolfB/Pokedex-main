@@ -6,6 +6,7 @@
     cursor: pointer;
     transition: transform 300ms ease;
     margin-bottom: 1rem;
+    background-color: rgb(236, 229, 229);
 }
 
 .pokecard:hover{

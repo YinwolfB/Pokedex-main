@@ -1,0 +1,27 @@
+.pokeinfopage{
+    background-color: rgb(236, 229, 229);
+    min-height: 100vh;
+}
+
+
+.pokeinfopage__header--img {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 2000px;
+    height: auto;
+}
+
+.pokeinfopage__header--teatle {
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+}
+
+.pokeinfopage__pokeinfocard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+}

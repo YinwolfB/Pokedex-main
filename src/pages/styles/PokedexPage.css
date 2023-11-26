@@ -3,42 +3,76 @@
     min-height: 100vh;
 }
 
+
+.pokedex__header--img {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 2000px;
+    height: auto;
+}
+
+.pokedex__header--teatle {
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+}
+
 .pokedex__greeting{
-    padding: 3em;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: 1em 1em 0em 1em;
+    font-size: 25px;
 }
 
-.pokedex__form{
+.pokedex__greeting--name{
+    color: #dd1a1a;
+    font-weight: 900;
+}
+
+.pokedex__container {
     display: flex;
     justify-content: center;
-    margin-bottom: 3em;
+    align-items: center;
+    gap: 1em; 
+    margin: 3em; 
+}
+
+.pokedex__form {
+    display: flex;
+    gap: 0.5em; 
+}
+
+.pokedex__selecttype {
+    display: flex;
+    align-items: center; 
+    gap: 0.5em; 
 }
 
 .pokedex__input{
-    padding: 0.5em 1em;
+    padding: 0.5em 1em;  
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .pokedex__btn {
     display: block;
     width: 6em;
-    padding: 0.5;
+
     border-radius: 0rem 0.5rem 0.5rem 0rem;
-    background: linear-gradient(to right, #FF0000, #FFFFFF);
+    background: linear-gradient(to right, #dd1a1a, #FFFFFF);
     transition: background 1s ease; /* Ajusta la duración y la función de temporización según tus necesidades */
     color: #FFFFFF;
     font-weight: 700;
+    font-size: 50px;
 }
-
-
 .pokedex__btn:hover {
     background: #FF0000; /* Cambia directamente a rojo al hacer hover */
 }
+
 
 .pokedex__err{
     min-height: 100vh;
@@ -46,12 +80,12 @@
     background-position: center;
     display: flex;
     justify-content: center;
+    font-weight: 700;
 }
 
-.pokedex__page{
+.pokedex__page {
     display: flex;
     flex-wrap: wrap;
     gap: 3em;
     justify-content: center;
-
 }

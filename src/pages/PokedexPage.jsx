@@ -43,14 +43,22 @@ export const PokedexPage = () => {
 
     return (
         <div className="pokedex">
-            <p className="pokedex__greeting"> Welcome <strong> -{trainerName}-</strong>, Here you can find your favorite Pokémon. let's go!</p>
-            <form className="pokedex__form" onSubmit={handleSubmit}>
-                <input className="pokedex__input" ref={inputSearch} type="text" />
-                <button className="pokedex__btn">Search</button>
-            </form>
-            <SelectType
-                setSelectValue={setSelectValue}
-            />
+            <header className="pokedex__header">
+                <img className="pokedex__header--teatle" src="./img/image 11 name.svg" alt="" />
+                <img className="pokedex__header--img" src="./img/Group 216 head.svg" alt="" />
+            </header>
+            <p className="pokedex__greeting"><p className="pokedex__greeting--name">Welcome {trainerName}</p>, Here you can find your favorite Pokémon. let's go!</p>
+            <section className="pokedex__container">
+                <form className="pokedex__form" onSubmit={handleSubmit}>
+                    <input className="pokedex__input" ref={inputSearch} type="text" />
+                    <button className="pokedex__btn">Search</button>
+                </form>
+                <div className="pokedex__selecttype">
+                    <SelectType
+                        setSelectValue={setSelectValue}
+                    />
+                </div>
+            </section>
             <div className="pokedex__page">
                 {
                     pokemons?.results.filter(cdFilter).map(poke => (
