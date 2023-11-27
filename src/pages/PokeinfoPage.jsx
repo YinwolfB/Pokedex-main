@@ -22,8 +22,8 @@ export const PokeinfoPage = () => {
     return (
         <article className="pokeinfopage">
             <header className="pokeinfopage__header">
-                <img className="pokeinfopage__header--title" src="/src/pages/styles/img/title.svg" alt="" />
-                <img className="pokeinfopage__header--img" src="/src/pages/styles/img/header.svg" alt="" />
+                <img className="pokeinfopage__header--title" src="./styles/img/title.svg" alt="" />
+                <img className="pokeinfopage__header--img" src="./styles/img/header.svg" alt="" />
             </header>
             <section className="pokeinfopage__pokeinfocard"> 
                 <PokeInfoCard url={url} />
