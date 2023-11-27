@@ -1,6 +1,6 @@
 .homepages {
     background-color: rgb(236, 229, 229);
-    min-height: 100vh;
+    width: 100%;
 }
 
 .homepages__container {
@@ -9,41 +9,35 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: auto;
-    padding: 1em;
-    height: 100vh; 
-    min-height: 100%;
+    width: 100vw; /* Cambiado a vw para ajustarse al ancho de la ventana gráfica */
+    height: 80vh;
 }
 
 .homepages__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    padding-bottom: 1em;
+    height: 15%;
+    max-width: 500px;
 }
 
-.homepages__greeting{
+.homepages__greeting {
     color: #dd1a1a;
     font-size: 3em;
 }
 
-.homepages__give{
-    font-size: 20px;
+.homepages__give {
+    font-size: 1em;
     padding: 0.5em;
 }
 
-.homepages__form{
+.homepages__form {
     display: flex;
     justify-content: center;
-    margin: 0.5em; 
+    margin: 0.5em;
     padding: 0.5em;
 }
 
-.homepages__input{
-    padding: 0.5em 1em;  
+.homepages__input {
+    padding: 0.5em 1em;
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
@@ -51,24 +45,27 @@
     display: block;
     border-radius: 0rem 0.5rem 0.5rem 0rem;
     background: linear-gradient(to right, #dd1a1a, #FFFFFF);
-    transition: background 1s ease;
+    font-size: 1em;
     color: #FFFFFF;
+    transition: background 1s ease;
 }
+
 .homepages__btn:hover {
     background: #FF0000;
 }
 
 /* ---------------------footer--------------------- */
+
 .homepages__footer {
-    text-align: center;
-    background-color: red;
-    
-}
-/* 
-.homepages__footer--img {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 2000px;
-    height: auto;
-} */
+    height: 20vh;
+}
+
+.homepages__footer--img {
+    width: 100%; /* Cambiado a 100% para que la imagen ocupe el 100% del ancho del contenedor */
+    height: auto; /* Usar auto para mantener la proporción original de la imagen */
+    max-width: 100%; /* Añadido para garantizar que la imagen no supere el ancho del contenedor */
+    max-height: 100%;/* Añadido para garantizar que la imagen no supere la altura del contenedor */
+}
