@@ -12,18 +12,18 @@ export const PokedexPage = () => {
 
     const [inputValue, setInputValue] = useState('')
     const [selectValue, setSelectValue] = useState('allPokemons')
-
     const trainerName = useSelector(store => store.trainerName)
-
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=40&offset=0'
-
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20000&offset=0'
     const [pokemons, getPokemons, getByTypeApi] = useFetch(url)
+
 
     useEffect(() => {
         if (selectValue === 'allPokemons') {
             getPokemons()
+            setPage(1)
         } else {
             getByTypeApi(selectValue)
+            setPage(1)
         }
     }, [selectValue])
 
@@ -35,11 +35,38 @@ export const PokedexPage = () => {
         inputSearch.current.value = ''
     }
 
-    const cdFilter = (poke) => {
+    const cbFilter = (poke) => {
         //Filtro por nombre en el input
         const nameFiltered = poke.name.includes(inputValue)
         return nameFiltered
     }
+    //Paginacion
+    const [page, setPage] = useState(1);
+    const pokemonsFiltered = pokemons?.results?.filter(cbFilter);
+
+    const totalPokemon = pokemonsFiltered?.length;
+    const pokePerPage = 12;
+    const quantityPages = Math.ceil(totalPokemon / pokePerPage);
+
+    let arrPages = [];
+    for (let i = 1; i <= quantityPages; i++) {
+        if (pokemonsFiltered) {
+            arrPages.push(i);
+        }
+    }
+
+    const firstIndex = pokePerPage * (page - 1);
+    const finalIndex = pokePerPage * page;
+
+    const pagesToShow = 5; // Número de páginas a mostrar
+    const halfPagesToShow = Math.floor(pagesToShow / 2);
+
+    // Calcular el rango de páginas a mostrar
+    let startPage = Math.max(1, page - halfPagesToShow);
+    let endPage = Math.min(startPage + pagesToShow - 1, quantityPages);
+
+    // Ajustar si el rango se sale del límite inferior
+    startPage = Math.max(1, endPage - pagesToShow + 1);
 
     return (
         <div className="pokedex">
@@ -64,7 +91,7 @@ export const PokedexPage = () => {
             </section>
             <div className="pokedex__page">
                 {
-                    pokemons?.results.filter(cdFilter).map(poke => (
+                    pokemonsFiltered?.slice(firstIndex, finalIndex).map(poke => (
                         <PokeCard
                             key={poke.url}
                             url={poke.url}
@@ -72,6 +99,52 @@ export const PokedexPage = () => {
                     ))
                 }
             </div>
+            <section className="pokedex_paginacion">
+                <ul className="paginacion">
+                    <li
+                        style={{ display: `${page <= 1 ? "none" : "block"}` }}
+                        className="paginacion__block"
+                        onClick={() => {
+                            if (page >= 2) {
+                                setPage(page - 1);
+                            }
+                        }}
+                    >
+                        &lt;
+                    </li>
+                    {arrPages.slice(startPage - 1, endPage).map((e) => (
+                        <li
+                            className={`paginacion__block ${e === page ? "paginacion__block--selected" : ""}`}
+                            onClick={() => setPage(e)}
+                            key={e}
+                        >
+                            {e}
+                        </li>
+                    ))}
+                    {arrPages.length > pagesToShow && endPage < quantityPages && (
+                        <>
+                            <li className="paginacion__block">...</li>
+                            <li
+                                className={`paginacion__block ${arrPages.length === page ? "paginacion__block--selected" : ""}`}
+                                onClick={() => setPage(arrPages.length)}
+                            >
+                                {arrPages.length}
+                            </li>
+                        </>
+                    )}
+                    <li
+                        style={{ display: `${page >= quantityPages ? "none" : "block"}` }}
+                        className="paginacion__block"
+                        onClick={() => {
+                            if (page < quantityPages) {
+                                setPage(page + 1);
+                            }
+                        }}
+                    >
+                        &gt;
+                    </li>
+                </ul>
+            </section>
         </div>
     )
 }

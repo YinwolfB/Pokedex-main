@@ -13,6 +13,7 @@
     background-color: whitesmoke;
     margin-bottom: 2rem;
     border-radius: 1em;
+    padding: 2em;
 }
 
 .pokeinfocard__section1:hover {
@@ -25,6 +26,7 @@
     position: relative;
     border-radius: 1em 1em 0em 0em;
     max-width: 100%; 
+    
 }
 
 .pokeinfocard__img {

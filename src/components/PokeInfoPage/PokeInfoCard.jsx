@@ -15,8 +15,8 @@ export const PokeInfoCard = ({ url }) => {
 
     const maxStatValue = 150;
 
-    const firstType = infoPoke?.types[0].type.name
-    const secondType = infoPoke?.types[1].type.name
+    const firstType = infoPoke?.types[0]?.type.name;
+    const secondType = infoPoke?.types[1]?.type.name;
 
 
     console.log(infoPoke)
