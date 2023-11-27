@@ -48,15 +48,18 @@ export const PokedexPage = () => {
     const pokePerPage = 12;
     const quantityPages = Math.ceil(totalPokemon / pokePerPage);
 
+    const showPages = 5; // Número de páginas a mostrar
+
     let arrPages = [];
-    for (let i = 1; i <= quantityPages; i++) {
-        if (pokemonsFiltered) {
-            arrPages.push(i);
-        }
+    for (let i = Math.max(1, page - Math.floor(showPages / 2)); i <= Math.min(quantityPages, page + Math.floor(showPages / 2)); i++) {
+        arrPages.push(i);
     }
 
     const firstIndex = pokePerPage * (page - 1);
     const finalIndex = pokePerPage * page;
+
+    const isFirstPage = page === 1;
+    const isLastPage = page === quantityPages;
 
     const pagesToShow = 5; // Número de páginas a mostrar
     const halfPagesToShow = Math.floor(pagesToShow / 2);
@@ -102,17 +105,20 @@ export const PokedexPage = () => {
             <section className="pokedex_paginacion">
                 <ul className="paginacion">
                     <li
-                        style={{ display: `${page <= 1 ? "none" : "block"}` }}
+                        style={{ display: `${isFirstPage ? "none" : "block"}` }}
                         className="paginacion__block"
-                        onClick={() => {
-                            if (page >= 2) {
-                                setPage(page - 1);
-                            }
-                        }}
+                        onClick={() => setPage(1)}
+                    >
+                        1
+                    </li>
+                    <li
+                        style={{ display: `${isFirstPage ? "none" : "block"}` }}
+                        className="paginacion__block"
+                        onClick={() => setPage(page - 1)}
                     >
                         &lt;
                     </li>
-                    {arrPages.slice(startPage - 1, endPage).map((e) => (
+                    {arrPages.map((e) => (
                         <li
                             className={`paginacion__block ${e === page ? "paginacion__block--selected" : ""}`}
                             onClick={() => setPage(e)}
@@ -121,29 +127,15 @@ export const PokedexPage = () => {
                             {e}
                         </li>
                     ))}
-                    {arrPages.length > pagesToShow && endPage < quantityPages && (
-                        <>
-                            <li className="paginacion__block">...</li>
-                            <li
-                                className={`paginacion__block ${arrPages.length === page ? "paginacion__block--selected" : ""}`}
-                                onClick={() => setPage(arrPages.length)}
-                            >
-                                {arrPages.length}
-                            </li>
-                        </>
-                    )}
                     <li
-                        style={{ display: `${page >= quantityPages ? "none" : "block"}` }}
+                        style={{ display: `${isLastPage ? "none" : "block"}` }}
                         className="paginacion__block"
-                        onClick={() => {
-                            if (page < quantityPages) {
-                                setPage(page + 1);
-                            }
-                        }}
+                        onClick={() => setPage(page + 1)}
                     >
                         &gt;
                     </li>
                 </ul>
+                <p className="total-pages">Total Pages: {quantityPages}</p>
             </section>
         </div>
     )
