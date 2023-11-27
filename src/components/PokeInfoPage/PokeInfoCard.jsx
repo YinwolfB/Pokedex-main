@@ -68,7 +68,7 @@ export const PokeInfoCard = ({ url }) => {
                     <ul className={`pokeinfocard__stats`}>
                         {infoPoke?.stats.map((infoStat, index) => {
                             const statPercentage = (infoStat.base_stat / maxStatValue) * 100;
-/* ${firstType}-value ${secondType}-value */
+
                             return (
                                 <li
                                     className={`pokeinfocard__stat`}

@@ -1,11 +1,12 @@
 .pokeinfocard {
     padding: 5rem;
+    width: 100vh;
 }
 
 /*---------------------- Section 1 ----------------------*/
 .pokeinfocard__section1 {
-    width: 100%;
-    max-width: 600px;
+    max-width: 100vh;
+    min-width: 50%;
     border: outset;
 /*     cursor: pointer; */
     transition: transform 300ms ease;
@@ -22,27 +23,28 @@
     background-color: #999;
     aspect-ratio: 2;
     position: relative;
-    border-radius: 1em;
+    border-radius: 1em 1em 0em 0em;
+    max-width: 100%; 
 }
 
 .pokeinfocard__img {
+    width: 60%;
     position: absolute;
-    width: 70%;
+    top: -80px;
     left: 50%;
     transform: translateX(-50%);
-    top: 0rem;
 }
 
 .pokeinfocard__basicdata {
-    padding: 3.5em 1em 2em;
-}
-
-.pokeinfocard__basicdata {
+    padding: 3.5em 4em 2em;
+    max-width: 100vh;
+    min-width: 25vh;
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
     margin-bottom: -1px;
 }
+
 
 .pokeinfocard__id {
     width: 3em;
@@ -61,7 +63,7 @@
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
-    margin-bottom: -1px;
+    margin-bottom: 1em;
 }
 
 
@@ -141,8 +143,10 @@
     margin: 0.6em;
     border-radius: 0.3rem;
     background-color: #ccc;
-
 }
+
+
+
 
 /*---------------------- Barra de stats ----------------------*/
 .pokeinfocard__statsdata {
@@ -157,8 +161,9 @@
 }
 
 .pokeinfocard__stat:hover {
-    transform: scale(1.3);
+    transform: scale(1.125);
     cursor: pointer;
+    transition: 0.8;
 }
 
 .pokeinfocard__stat--name {
@@ -177,11 +182,15 @@
     border-radius: 0.3rem;
     overflow: hidden;
     margin: 0em 5em 0em 5em;
+    
     transition: transform 1s ease;
+    
 }
 
 .pokeinfocard__stat:hover .pokeinfocard__stat-progress {
-    background-color: #271e1b; 
+    background-color: #271e1b;
+    transition: 0.8;
+    
 }
 
 .pokeinfocard__stat-progress {
@@ -210,8 +219,8 @@
 
 /*---------------------- Section 2 ----------------------*/
 .pokeinfocard__section2 {
-    width: 100%;
-    max-width: 600px;
+    max-width: 100vh;
+    min-width: 50%;
     border: outset;
     background-color: whitesmoke;
     transition: transform 300ms ease;
@@ -220,29 +229,25 @@
 }
 
 .pokeinfocard__section2:hover {
-
     transform: scale(1.03);
 }
 
 .pokeinfocard__titlemovements {
     text-align: center;
-    /* Centra el título */
 }
 
 .pokeinfocard__hr1 {
     margin: 10px auto;
-    /* Ajusta el margen y centra la línea horizontal */
     width: 50%;
-    /* Ajusta la longitud de la línea horizontal */
     border: 3px solid #ccc4;
 }
 
 .pokeinfocard__movements {
+    max-width: 100%;
+    min-width: 50%;
     display: flex;
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan en varias líneas */
     justify-content: space-around;
-    /* Distribuye el espacio horizontalmente */
 }
 
 .pokeinfocard__move {
@@ -251,14 +256,12 @@
     padding: 0.1em 0.6em 0.1em 0.6em;
     border-radius: 1rem;
     transition: transform 500ms ease, box-shadow 300ms ease;
-    /* Agrega la transición a box-shadow */
 }
 
 .pokeinfocard__move:hover {
     transform: scale(2);
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-    /* Agrega la sombra al hacer hover */
 }
 
 
