@@ -44,8 +44,8 @@ export const PokedexPage = () => {
     return (
         <div className="pokedex">
             <header className="pokedex__header">
-                <img className="pokedex__header--teatle" src="./img/image 11 name.svg" alt="" />
-                <img className="pokedex__header--img" src="./img/Group 216 head.svg" alt="" />
+                <img className="pokedex__header--teatle" src="/src/pages/styles/img/title.svg" alt="" />
+                <img className="pokedex__header--img" src="/src/pages/styles/img/header.svg" alt="" />
             </header>
             <p className="pokedex__greeting"><p className="pokedex__greeting--name">Welcome {trainerName}</p>, Here you can find your favorite Pokémon. let's go!</p>
             <section className="pokedex__container">

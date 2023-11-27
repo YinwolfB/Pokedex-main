@@ -10,7 +10,7 @@
     justify-content: center;
     text-align: center;
     width: 100vw; /* Cambiado a vw para ajustarse al ancho de la ventana gráfica */
-    height: 80vh;
+    height: 100vh;
 }
 
 .homepages__img {
@@ -57,15 +57,17 @@
 /* ---------------------footer--------------------- */
 
 .homepages__footer {
+    position: fixed;
+    bottom: 0;
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 20vh;
+    max-height: 20vh;
 }
 
 .homepages__footer--img {
-    width: 100%; /* Cambiado a 100% para que la imagen ocupe el 100% del ancho del contenedor */
-    height: auto; /* Usar auto para mantener la proporción original de la imagen */
-    max-width: 100%; /* Añadido para garantizar que la imagen no supere el ancho del contenedor */
-    max-height: 100%;/* Añadido para garantizar que la imagen no supere la altura del contenedor */
+    width: 100%; 
+    height: auto; 
+    max-width: 100%; 
+    max-height: 100%;
 }
