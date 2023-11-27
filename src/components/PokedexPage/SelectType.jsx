@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef } from "react"
 import { useFetch } from "../../hooks/useFetch"
-import './styles/SelectType.css'
+import '../../pages/styles/PokedexPage.css'
 
 /* eslint-disable react/no-unescaped-entities */
 export const SelectType = ({ setSelectValue }) => {
@@ -24,7 +24,7 @@ export const SelectType = ({ setSelectValue }) => {
     return (
         <article className="selecttype">
             <select className="selecttype__container" ref={selectElement} onChange={handleChange}>
-                <option className="selecttype__allpoke" value='allPokemons'>  Type Pokémon's </option>
+                <option className="selecttype__allpoke" value='allPokemons'>  All Pokémon's </option>
                 {
                     infoTypes?.results.map(type => (
                         <option className="selecttype__listype" key={type.url} value={type.url}>{type.name}</option>

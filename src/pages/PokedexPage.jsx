@@ -15,7 +15,7 @@ export const PokedexPage = () => {
 
     const trainerName = useSelector(store => store.trainerName)
 
-    const url = 'https://pokeapi.co/api/v2/pokemon?limit=20000&offset=0'
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=40&offset=0'
 
     const [pokemons, getPokemons, getByTypeApi] = useFetch(url)
 
@@ -47,7 +47,10 @@ export const PokedexPage = () => {
                 <img className="pokedex__header--teatle" src="/src/pages/styles/img/title.svg" alt="" />
                 <img className="pokedex__header--img" src="/src/pages/styles/img/header.svg" alt="" />
             </header>
-            <p className="pokedex__greeting"><p className="pokedex__greeting--name">Welcome {trainerName}</p>, Here you can find your favorite Pokémon. let's go!</p>
+            <div className="pokedex__greeting">
+                <p className="pokedex__greeting--name">Welcome {trainerName}.</p>
+                <span className="pokedex__greeting--find">Here you can find your favorite Pokémon. let's go!</span>
+            </div>
             <section className="pokedex__container">
                 <form className="pokedex__form" onSubmit={handleSubmit}>
                     <input className="pokedex__input" ref={inputSearch} type="text" />
