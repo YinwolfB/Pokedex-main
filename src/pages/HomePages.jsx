@@ -24,7 +24,7 @@ export const HomePages = () => {
     return (
         <div className="homepages">
             <section className="homepages__container">
-                <img className="homepages__img" src='./styles/img/title.svg' alt="PokéDex" />
+                <img className="homepages__img" src='/src/pages/styles/img/title.svg' alt="PokéDex" />
                 <h2 className="homepages__greeting">Hi Trainer!</h2>
                 <p className="homepages__give">To start, please give me your trainer name</p>
                 <form className="homepages__form" onSubmit={handleSubmit}>
@@ -33,7 +33,7 @@ export const HomePages = () => {
                 </form>
             </section>
             <footer className="homepages__footer">
-                <img className="homepages__footer--img" src="./styles/img/footer.svg" alt="Footer" />
+                <img className="homepages__footer--img" src="/src/pages/styles/img/footerimg.png" alt="Footer" />
             </footer>
         </div>
     )

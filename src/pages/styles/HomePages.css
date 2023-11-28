@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100vw; /* Cambiado a vw para ajustarse al ancho de la ventana gráfica */
+    width: 100vw; 
     height: 100vh;
 }
 

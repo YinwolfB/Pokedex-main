@@ -8,7 +8,6 @@
     max-width: 100vh;
     min-width: 50%;
     border: outset;
-/*     cursor: pointer; */
     transition: transform 300ms ease;
     background-color: whitesmoke;
     margin-bottom: 2rem;
@@ -159,7 +158,6 @@
 .pokeinfocard__stat {
     margin-bottom: 1rem;
     transition: transform 500ms ease, box-shadow 300ms ease;
-    /* Agrega la transición a box-shadow */
 }
 
 .pokeinfocard__stat:hover {

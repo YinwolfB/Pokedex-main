@@ -103,9 +103,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%; /* Usar 100% en lugar de 100vh para adaptarse al ancho del contenedor */
-    overflow-x: auto; /* Agregar desplazamiento horizontal si es necesario */
-    white-space: nowrap; /* Evitar que los elementos se desplacen a la siguiente línea */
+    width: 100%; 
+    overflow-x: auto; 
+    white-space: nowrap; /
 }
 
 .paginacion__block {
