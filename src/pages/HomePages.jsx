@@ -4,8 +4,9 @@ import { setTrainerName } from "../store/slices/trainerName.slice"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import './styles/HomePages.css'
-import './styles/img/footer.svg'
-import './styles/img/footerimg.png'
+import '../../public/img/footer.svg'
+import '../../public/img/title.svg'
+
 
 export const HomePages = () => {
 
@@ -24,7 +25,7 @@ export const HomePages = () => {
     return (
         <div className="homepages">
             <section className="homepages__container">
-                <img className="homepages__img" src='/src/pages/styles/img/title.svg' alt="PokéDex" />
+                <img className="homepages__img" src='../../public/img/title.svg' alt="PokéDex" />
                 <h2 className="homepages__greeting">Hi Trainer!</h2>
                 <p className="homepages__give">To start, please give me your trainer name</p>
                 <form className="homepages__form" onSubmit={handleSubmit}>
@@ -33,7 +34,7 @@ export const HomePages = () => {
                 </form>
             </section>
             <footer className="homepages__footer">
-                <img className="homepages__footer--img" src="/src/pages/styles/img/footerimg.png" alt="Footer" />
+                <img className="homepages__footer--img" src="../../public/img/footerimg.png" alt="Footer" />
             </footer>
         </div>
     )
