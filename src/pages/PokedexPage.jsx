@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from "react"
 import { PokeCard } from "../components/PokedexPage/PokeCard"
 import { SelectType } from "../components/PokedexPage/SelectType"
 import './styles/PokedexPage.css'
+import title from "../../public/img/title.svg"
+import header from "../../public/img/header.svg"
 
 export const PokedexPage = () => {
 
@@ -74,8 +76,8 @@ export const PokedexPage = () => {
     return (
         <div className="pokedex">
             <header className="pokedex__header">
-                <img className="pokedex__header--teatle" src="/src/pages/styles/img/title.svg" alt="" />
-                <img className="pokedex__header--img" src="/src/pages/styles/img/header.svg" alt="" />
+                <img className="pokedex__header--teatle" src={title} alt="Pokédex" />
+                <img className="pokedex__header--img" src={header} alt="header" />
             </header>
             <div className="pokedex__greeting">
                 <p className="pokedex__greeting--name">Welcome {trainerName}.</p>

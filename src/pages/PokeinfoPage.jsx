@@ -4,6 +4,8 @@ import { useFetch } from "../hooks/useFetch"
 import { useEffect } from "react"
 import { PokeInfoCard } from "../components/PokeInfoPage/PokeInfoCard"
 import './styles/PokeInfoPage.css'
+import title from "../../public/img/title.svg"
+import header from "../../public/img/header.svg"
 
 export const PokeinfoPage = () => {
 
@@ -22,8 +24,8 @@ export const PokeinfoPage = () => {
     return (
         <article className="pokeinfopage">
             <header className="pokeinfopage__header">
-                <img className="pokeinfopage__header--title" src="/src/pages/styles/img/title.svg" alt="" />
-                <img className="pokeinfopage__header--img" src="/src/pages/styles/img/header.svg" alt="" />
+                <img className="pokeinfopage__header--title" src={title} alt="" />
+                <img className="pokeinfopage__header--img" src={header} alt="" />
             </header>
             <section className="pokeinfopage__pokeinfocard"> 
                 <PokeInfoCard url={url} />
